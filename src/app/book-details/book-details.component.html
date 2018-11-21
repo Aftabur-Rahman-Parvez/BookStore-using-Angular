@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-center mt-5 mb-4">
+     
+        <div class="col-sm-6 border_all">
+            <img class="img-fluid rounded" src="{{post.image}}" alt="Card image" style="width:100%">
+      
+            <hr>
+
+            <p class="mt-4 lead"><strong>Name:</strong> {{post.bookname}}</p>
+      
+            <p class="lead">
+              <strong>Author by:</strong>
+              {{post.author_by}}
+            </p>
+      
+            <hr>
+    
+            <p class="lead"><strong>Price:</strong> {{post.price}} Tk</p>
+      
+            <hr>
+      
+            <p class="lead"><strong>Publish Date:</strong> {{post.date | date}}</p>
+    
+            <p class="lead mb-5"><strong>Description:</strong> {{post.description}}</p>
+            
+    
+          <button class="btn btn-primary pl-4 pr-4 mr-2 mb-3 ml-4 " [routerLink]="['/add-book/'+post_id+'/edit']">Edit</button>
+          <button class="btn btn-danger pl-4 pr-4 mb-3" (click)="deleteItem(post_id)">Delete</button>
+            
+    
+        </div>
+      
+    </div>
+  </div>
+

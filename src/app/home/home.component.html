@@ -1,0 +1,83 @@
+<!-- <div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+      
+            <input  [(ngModel)]="term" name="term" class="form-control" type="text" placeholder="Search.." >
+            <input [(ngModel)]="term" name="term" placeholder="Searching....." type="text" class="form-control">
+
+        <input  class="form-control mr-sm-2" name="term" [(ngModel)]="term"  placeholder="Search by Author Name">
+       
+         
+        
+      </div>
+      
+    </div>
+    <div class="col-sm-6" >
+      <div class="form-group">
+        <select  class="custom-select" id="inputGroupSelect01" >
+          <option selected >Choose...</option>
+         <option value="title">Title</option>
+          <option value="author">Author</option> 
+          <option value="date">Date</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<form class="container">
+  <div class="row">
+    <div class="col-md-5 mt-4 mb-4"> 
+        <div class="form-group">
+            <input 
+        class="form-control mr-sm-2" name="term" [(ngModel)]="term" placeholder="Search by Author Name">
+          
+          
+        </div>
+    </div>
+
+    <div class="col-md-5 mt-4 mb-4">
+        <div class="form-group">
+            <select  class="custom-select" id="inputGroupSelect01"  [(ngModel)]="sortname" name="sortname">
+              <option selected >Choose...</option>
+              <option value="title">Title</option>
+              <option value="author_by">Author</option>
+              <option value="date">Date</option>
+            </select>
+          </div>
+    </div>
+  </div>
+  
+
+
+</form>
+
+<div class="container">
+    <div class="row mt-5"  >
+      <div class="col-sm-4" *ngFor="let post of posts | myFilter:term ">
+        <a class="card_a" [routerLink]="['/add-book',post.$key]">
+            <div class="card" >
+                <img class="card-img-bottom" src="{{post.image}}" alt="Card image" style="width:100%">
+              <div class="card-body">
+               
+                <h3 class="card-text"> {{post.bookname}}</h3>
+                <hr>
+                <p class="card-text">By :{{post.author_by }}</p>
+                <hr>
+                <p class="card-text">Price:{{post.price}} Tk</p>
+                <hr>
+                <p class="card-text">Publish Date:{{post.date | date}}</p>
+                <!-- <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-primary">Details</button> -->
+
+                
+              </div>
+              
+            </div>
+        </a>
+          
+      </div>
+    </div>
+  </div>

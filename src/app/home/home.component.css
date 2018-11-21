@@ -1,0 +1,7 @@
+a.card_a{
+    color:#000;
+}
+a.card_a:hover{
+    border-bottom:0px;
+    text-decoration:none; 
+}
